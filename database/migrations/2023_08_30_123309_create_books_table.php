@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image_path', 100);
             $table->string('publisher', 50);
             $table->string('category', 50);
-            $table->bigInteger('pages', 5);
+            $table->bigInteger('pages', false); 
             $table->string('language', 20);
             $table->timestamp('publish_date');
             $table->string('subjects', 50);
