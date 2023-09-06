@@ -26,7 +26,8 @@ class BookController extends Controller
         ];
 
 
-        return view('index')->with("userData", $userData)->with("bookData", $bookData);
+        // return view('index')->with("userData", $userData)->with("bookData", $bookData);
+        return view('book/index')->with("userData", $userData)->with("bookData", $bookData);
     }
 
     public function detail()
@@ -47,6 +48,11 @@ class BookController extends Controller
             "desc" => "Lily hasn't always had it easy, but that's never stopped her from working hard for the life she wants. She's come a long way from the small town where she grew up—she graduated from college, moved to Boston, and started her own business. And when she feels a spark with a gorgeous neurosurgeon named Ryle Kincaid, everything in Lily's life seems too good to be true. Ryle is assertive, stubborn, maybe even a little arrogant. He's also sensitive, brilliant, and has a total soft spot for Lily. And the way he looks in scrubs certainly doesn't hurt. Lily can't get him out of her head. But Ryle's complete aversion to relationships is disturbing. Even as Lily finds herself becoming the exception to his 'no dating' rule, she can't help but wonder what made him that way in the first place. As questions about her new relationship overwhelm her, so do thoughts of Atlas Corrigan—her first love and a link to the past she left behind. He was her kindred spirit, her protector. When Atlas suddenly reappears, everything Lily has built with Ryle is threatened. With this bold and deeply personal novel, It Ends With Us is a heart-wrenching story and an unforgettable tale of love that comes at the ultimate price."
         ];
 
-        return view('details', ['bookTest' => $bookTest], ["book" => $book]);
+        return view('book/detail', ['bookTest' => $bookTest], ["book" => $book]);
+    }
+
+    public function hello()
+    {
+        return view('hello');
     }
 }

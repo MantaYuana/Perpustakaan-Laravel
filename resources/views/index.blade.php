@@ -8,7 +8,7 @@
     <title>Document</title>
 
     <style>
-        @import url('../css/app.css');
+        /* @import url('../../public/styles/app.css'); */
     </style>
 </head>
 

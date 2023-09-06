@@ -16,7 +16,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [BookController::class, 'index']);
-Route::get('/books/details', [BookController::class, 'detail']);
+Route::get('/book', [BookController::class, 'index']);
+Route::get('/book/details', [BookController::class, 'detail']);
 
 // Route::get('/', function () {
 //     $userData = ["username" => "MantaY", "age" => 23, "favorite" => "Sci-fi"];
@@ -39,8 +40,10 @@ Route::get('/books/details', [BookController::class, 'detail']);
 //     return view('index')->with("userData", $userData)->with("bookData", $bookData);
 // });
 
-Route::get('/book', function () {
-    return view('index');
+
+
+Route::get('/hello', function () {
+    return view('testpage');
 });
 
 // will make the {id} part of the URL into an argument and call a method "show" in UserController controller
