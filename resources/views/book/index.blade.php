@@ -37,7 +37,7 @@
     @foreach($bookData as $x)
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-            <img src="{{$x['image']}}" alt="..." width="250px" height="385px"> <!-- FIXME: image size not same -->
+            <img src="{{$x['image']}}" alt="..." width="250px" height="385px" style="height: 385px !important">
             <div class="caption">
                 <h4>{{$x["title"]}}</h4> <!-- FIXME: font too big, should implement char limit, for now changed h3 to h4 -->
                 <p>{{$x["desc"]}}</p>
