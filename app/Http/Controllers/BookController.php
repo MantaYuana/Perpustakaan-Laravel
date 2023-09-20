@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Books;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -10,21 +11,21 @@ class BookController extends Controller
     {
         $userData = ["username" => "MantaY", "age" => 23, "favorite" => "Sci-fi"];
 
-        $bookData = [
-            ["id" => 1, "image" => "https://covers.openlibrary.org/b/olid/OL27213498M-M.jpg", "title" => "It Ends With Us", "desc" => "Cool book"],
-            ["id" => 2, "image" => "https://covers.openlibrary.org/b/olid/OL25418275M-M.jpg", "title" => "POWER", "desc" => "Cool book"],
-            ["id" => 3, "image" => "https://covers.openlibrary.org/b/olid/OL28230579M-M.jpg", "title" => "The Suble Art of Not Giving A ", "desc" => "Cool book"],
-            ["id" => 4, "image" => "https://covers.openlibrary.org/b/olid/OL16980586M-M.jpg", "title" => "Rich Dad, Poor Dad", "desc" => "Cool book"],
-            ["id" => 5, "image" => "https://covers.openlibrary.org/b/id/12749873-M.jpg", "title" => "It Starts With Us", "desc" => "Cool book"],
-            ["id" => 6, "image" => "https://covers.openlibrary.org/b/olid/OL26992991M-M.jpg", "title" => "Court of Mist and Fury", "desc" => "Cool book"],
-            ["id" => 7, "image" => "https://covers.openlibrary.org/b/olid/OL22856696M-M.jpg", "title" => "Harry Potter", "desc" => "Cool book"],
-            ["id" => 8, "image" => "https://covers.openlibrary.org/b/id/13180424-M.jpg", "title" => "Twisted Love", "desc" => "Cool book"],
-            ["id" => 9, "image" => "https://covers.openlibrary.org/b/olid/OL27918581M-M.jpg", "title" => "Atomic Habits", "desc" => "Cool book"],
-            ["id" => 10, "image" => "https://covers.openlibrary.org/b/id/10389354-M.jpg", "title" => "The Psychology of Money", "desc" => "Cool book"],
-            ["id" => 11, "image" => "https://covers.openlibrary.org/b/olid/OL29191495M-M.jpg", "title" => "Ugly Love", "desc" => "Cool book"],
-            ["id" => 12, "image" => "https://covers.openlibrary.org/b/olid/OL26425330M-M.jpg", "title" => "Game of Thrones", "desc" => "Cool book"]
-        ];
-
+        // $bookData = [
+        //     ["id" => 1, "image" => "https://covers.openlibrary.org/b/olid/OL27213498M-M.jpg", "title" => "It Ends With Us", "desc" => "Cool book"],
+        //     ["id" => 2, "image" => "https://covers.openlibrary.org/b/olid/OL25418275M-M.jpg", "title" => "POWER", "desc" => "Cool book"],
+        //     ["id" => 3, "image" => "https://covers.openlibrary.org/b/olid/OL28230579M-M.jpg", "title" => "The Suble Art of Not Giving A ", "desc" => "Cool book"],
+        //     ["id" => 4, "image" => "https://covers.openlibrary.org/b/olid/OL16980586M-M.jpg", "title" => "Rich Dad, Poor Dad", "desc" => "Cool book"],
+        //     ["id" => 5, "image" => "https://covers.openlibrary.org/b/id/12749873-M.jpg", "title" => "It Starts With Us", "desc" => "Cool book"],
+        //     ["id" => 6, "image" => "https://covers.openlibrary.org/b/olid/OL26992991M-M.jpg", "title" => "Court of Mist and Fury", "desc" => "Cool book"],
+        //     ["id" => 7, "image" => "https://covers.openlibrary.org/b/olid/OL22856696M-M.jpg", "title" => "Harry Potter", "desc" => "Cool book"],
+        //     ["id" => 8, "image" => "https://covers.openlibrary.org/b/id/13180424-M.jpg", "title" => "Twisted Love", "desc" => "Cool book"],
+        //     ["id" => 9, "image" => "https://covers.openlibrary.org/b/olid/OL27918581M-M.jpg", "title" => "Atomic Habits", "desc" => "Cool book"],
+        //     ["id" => 10, "image" => "https://covers.openlibrary.org/b/id/10389354-M.jpg", "title" => "The Psychology of Money", "desc" => "Cool book"],
+        //     ["id" => 11, "image" => "https://covers.openlibrary.org/b/olid/OL29191495M-M.jpg", "title" => "Ugly Love", "desc" => "Cool book"],
+        //     ["id" => 12, "image" => "https://covers.openlibrary.org/b/olid/OL26425330M-M.jpg", "title" => "Game of Thrones", "desc" => "Cool book"]
+        // ];
+        $bookData = Books::all();
 
         // return view('index')->with("userData", $userData)->with("bookData", $bookData);
         return view('book/index')->with("userData", $userData)->with("bookData", $bookData);
