@@ -19,31 +19,31 @@
         <!-- NOTE: Layouts may also be created via "template inheritance". This was the primary way of building applications prior to the introduction of components. (source: Laravel docs 10.x)-->
 
         <nav class="navbar navbar-default">
-            @yield('navbar')  
+            @yield('navbar')
         </nav>
 
         <div class="row">
             @yield('content')
         </div>
 
-        @yield('pagination')
         <div class="text-center">
             <nav aria-label="Page navigation">
                 <ul class="pagination">
-                    <li>
+                    <!-- <li>
                         <a href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
-                    </li>
-                    <li><a href="#">1</a></li>
+                    </li> -->
+                    <!-- <li><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
+                    <li> -->
+                    @yield('pagination')
+                    <!-- <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a> -->
                     </li>
                 </ul>
             </nav>

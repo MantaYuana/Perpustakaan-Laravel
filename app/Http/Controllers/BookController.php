@@ -9,6 +9,7 @@ class BookController extends Controller
 {
     public function index()
     {
+        $pagePagination = Books::paginate(5);
         $userData = ["username" => "MantaY", "age" => 23, "favorite" => "Sci-fi"];
 
         // $bookData = [
@@ -28,7 +29,7 @@ class BookController extends Controller
         $bookData = Books::all();
 
         // return view('index')->with("userData", $userData)->with("bookData", $bookData);
-        return view('book/index')->with("userData", $userData)->with("bookData", $bookData);
+        return view('book/index')->with("userData", $userData)->with("bookData", $bookData)->with("pagination", $pagePagination);
     }
 
     public function detail()
@@ -50,6 +51,30 @@ class BookController extends Controller
         ];
 
         return view('book/detail', ['bookTest' => $bookTest], ["book" => $book]);
+    }
+
+    public function create()
+    {
+    }
+
+    public function store()
+    {
+    }
+
+    public function show()
+    {
+    }
+
+    public function edit()
+    {
+    }
+
+    public function update()
+    {
+    }
+
+    public function destroy()
+    {
     }
 
     public function hello()
