@@ -15,8 +15,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [BookController::class, 'index']);
-Route::get('/book', [BookController::class, 'index']);
+Route::get('/', [BookController::class, 'index'])->name("books.index");
+// Route::get('/book', [BookController::class, 'index']);
+Route::get('/book/create', [BookController::class, 'create'])->name("books.create");
+Route::post('/book', [BookController::class, 'store'])->name("books.store");
+Route::get('/book/{books}', [BookController::class, 'show'])->name("books.show");
+Route::get('/book/{books}/edit', [BookController::class, 'edit'])->name("books.edit");
+Route::put('/book/{books}', [BookController::class, 'update'])->name("books.edit");
+Route::delete('/book/{books}', [BookController::class, 'destroy'])->name("books.destroy");
+
 Route::get('/book/details', [BookController::class, 'detail']);
 
 // Route::get('/', function () {

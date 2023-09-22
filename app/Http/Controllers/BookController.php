@@ -55,25 +55,30 @@ class BookController extends Controller
 
     public function create()
     {
+        return view('book/book-form');
     }
 
-    public function store()
+    public function store(Request $request)
+    {
+        $book = new Books;
+        $book->create($request->all());
+
+        return redirect()->route('books.index');
+    }
+
+    public function show(Books $book)
     {
     }
 
-    public function show()
+    public function edit(Books $book)
     {
     }
 
-    public function edit()
+    public function update(Books $book)
     {
     }
 
-    public function update()
-    {
-    }
-
-    public function destroy()
+    public function destroy(Books $book)
     {
     }
 
